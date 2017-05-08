@@ -16,6 +16,13 @@
 		7D0A743E1EBEBAB200EE9092 /* SceneKitDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0A743D1EBEBAB200EE9092 /* SceneKitDemoUITests.swift */; };
 		7D0A744C1EC0A92200EE9092 /* GeometryFighter.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D0A744B1EC0A92200EE9092 /* GeometryFighter.scnassets */; };
 		7D0A744E1EC0B33700EE9092 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0A744D1EC0B33700EE9092 /* Shape.swift */; };
+		7D0A74571EC0C0A100EE9092 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0A74501EC0C0A100EE9092 /* Double+Extensions.swift */; };
+		7D0A74581EC0C0A100EE9092 /* Float+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0A74511EC0C0A100EE9092 /* Float+Extensions.swift */; };
+		7D0A74591EC0C0A100EE9092 /* GameHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0A74521EC0C0A100EE9092 /* GameHelper.swift */; };
+		7D0A745A1EC0C0A100EE9092 /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0A74531EC0C0A100EE9092 /* Generics.swift */; };
+		7D0A745B1EC0C0A100EE9092 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0A74541EC0C0A100EE9092 /* Int+Extensions.swift */; };
+		7D0A745C1EC0C0A100EE9092 /* SCNAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0A74551EC0C0A100EE9092 /* SCNAction+Extensions.swift */; };
+		7D0A745D1EC0C0A100EE9092 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0A74561EC0C0A100EE9092 /* UIColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,13 @@
 		7D0A743F1EBEBAB200EE9092 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D0A744B1EC0A92200EE9092 /* GeometryFighter.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = GeometryFighter.scnassets; sourceTree = "<group>"; };
 		7D0A744D1EC0B33700EE9092 /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		7D0A74501EC0C0A100EE9092 /* Double+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		7D0A74511EC0C0A100EE9092 /* Float+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+Extensions.swift"; sourceTree = "<group>"; };
+		7D0A74521EC0C0A100EE9092 /* GameHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHelper.swift; sourceTree = "<group>"; };
+		7D0A74531EC0C0A100EE9092 /* Generics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generics.swift; sourceTree = "<group>"; };
+		7D0A74541EC0C0A100EE9092 /* Int+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		7D0A74551EC0C0A100EE9092 /* SCNAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNAction+Extensions.swift"; sourceTree = "<group>"; };
+		7D0A74561EC0C0A100EE9092 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +118,7 @@
 				7D0A741B1EBEBAB200EE9092 /* AppDelegate.swift */,
 				7D0A741F1EBEBAB200EE9092 /* GameViewController.swift */,
 				7D0A74211EBEBAB200EE9092 /* Main.storyboard */,
+				7D0A744F1EC0C0A100EE9092 /* GameUtils */,
 				7D0A744B1EC0A92200EE9092 /* GeometryFighter.scnassets */,
 				7D0A74241EBEBAB200EE9092 /* Assets.xcassets */,
 				7D0A74261EBEBAB200EE9092 /* LaunchScreen.storyboard */,
@@ -129,6 +144,20 @@
 				7D0A743F1EBEBAB200EE9092 /* Info.plist */,
 			);
 			path = SceneKitDemoUITests;
+			sourceTree = "<group>";
+		};
+		7D0A744F1EC0C0A100EE9092 /* GameUtils */ = {
+			isa = PBXGroup;
+			children = (
+				7D0A74501EC0C0A100EE9092 /* Double+Extensions.swift */,
+				7D0A74511EC0C0A100EE9092 /* Float+Extensions.swift */,
+				7D0A74521EC0C0A100EE9092 /* GameHelper.swift */,
+				7D0A74531EC0C0A100EE9092 /* Generics.swift */,
+				7D0A74541EC0C0A100EE9092 /* Int+Extensions.swift */,
+				7D0A74551EC0C0A100EE9092 /* SCNAction+Extensions.swift */,
+				7D0A74561EC0C0A100EE9092 /* UIColor+Extensions.swift */,
+			);
+			path = GameUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,9 +298,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D0A74581EC0C0A100EE9092 /* Float+Extensions.swift in Sources */,
+				7D0A745D1EC0C0A100EE9092 /* UIColor+Extensions.swift in Sources */,
+				7D0A74571EC0C0A100EE9092 /* Double+Extensions.swift in Sources */,
+				7D0A745C1EC0C0A100EE9092 /* SCNAction+Extensions.swift in Sources */,
+				7D0A745A1EC0C0A100EE9092 /* Generics.swift in Sources */,
 				7D0A74201EBEBAB200EE9092 /* GameViewController.swift in Sources */,
 				7D0A744E1EC0B33700EE9092 /* Shape.swift in Sources */,
+				7D0A745B1EC0C0A100EE9092 /* Int+Extensions.swift in Sources */,
 				7D0A741C1EBEBAB200EE9092 /* AppDelegate.swift in Sources */,
+				7D0A74591EC0C0A100EE9092 /* GameHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,8 +458,10 @@
 		7D0A74431EBEBAB200EE9092 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TBSUACPT52;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				INFOPLIST_FILE = SceneKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.klone.SceneKitDemo;
@@ -435,8 +473,10 @@
 		7D0A74441EBEBAB200EE9092 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TBSUACPT52;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				INFOPLIST_FILE = SceneKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.klone.SceneKitDemo;
