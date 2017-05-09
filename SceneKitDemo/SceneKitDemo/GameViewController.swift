@@ -17,12 +17,15 @@ class GameViewController: UIViewController {
     var cameraNode : SCNNode!
     
     var remake : TimeInterval = 0
+    var game = GameHelper.sharedInstance
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configScnView()
         configScene()
         configCamera()
+        createHUD()
     }
     
     override var shouldAutorotate: Bool {
@@ -37,7 +40,7 @@ class GameViewController: UIViewController {
         scnView = self.view as! SCNView
 //        scnView.backgroundColor = UIColor.white
         scnView.showsStatistics = true
-        scnView.allowsCameraControl = true
+        scnView.allowsCameraControl = false
         scnView.autoenablesDefaultLighting = true
         scnView.delegate = self
         scnView.isPlaying = true
@@ -87,6 +90,18 @@ class GameViewController: UIViewController {
         let force = SCNVector3(x: randomX, y: randomY, z:0)
         let position = SCNVector3(x: 0.05, y: 0.05, z: 0.05)
         
+        let color = UIColor.random()
+        geometry.materials.first?.diffuse.contents = color
+        
+        let trailEmitter = createtrail(color, geometry)
+        geometryNode.addParticleSystem(trailEmitter)
+        
+        if color == UIColor.black {
+            geometryNode.name = "坏"
+        } else {
+            geometryNode.name = "好"
+        }
+        
         geometryNode.physicsBody?.applyForce(force, at: position, asImpulse: true)
         scn.rootNode.addChildNode(geometryNode)
         
@@ -100,6 +115,42 @@ class GameViewController: UIViewController {
             }
         }
     
+    }
+    
+    func createtrail(_ color: UIColor,_ geometry: SCNGeometry) -> SCNParticleSystem {
+        
+        let trail = SCNParticleSystem(named: "Trail.scnp", inDirectory: nil)
+        trail?.particleColor = color
+        trail?.emitterShape = geometry
+        return trail!
+        
+    }
+    
+    func tapHandle(_ node: SCNNode) {
+        if node.name == "好" {
+            game.score += 1
+            node.removeFromParentNode()
+        } else if node.name == "坏" {
+            game.lives -= 1
+            node.removeFromParentNode()
+        }
+    }
+    
+    func createHUD() {
+        
+        game.hudNode.position = SCNVector3(x: 0.0, y: 10.0, z: 0)
+        scn.rootNode.addChildNode(game.hudNode)
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let tap = touches.first
+        let position = tap?.location(in: scnView)
+        let testResult = scnView.hitTest(position!, options: nil)
+        if testResult.count > 0 {
+            let result = testResult.first!
+            tapHandle(result.node)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -118,6 +169,7 @@ extension GameViewController : SCNSceneRendererDelegate {
             remake = time + TimeInterval(Float.random(min: 0.2, max: 1.5))
         }
         clearScene()
+        game.updateHUD()
     }
 
 }
