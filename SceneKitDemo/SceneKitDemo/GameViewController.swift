@@ -82,7 +82,6 @@ class GameViewController: UIViewController {
         
         let geometryNode = SCNNode(geometry: geometry)
         geometryNode.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
-        geometry.materials.first?.diffuse.contents = UIColor.random()
         
         let randomX = Float.random(min: -2.0, max: 2.0)
         let randomY = Float.random(min: 10, max: 8)
@@ -96,7 +95,7 @@ class GameViewController: UIViewController {
         let trailEmitter = createtrail(color, geometry)
         geometryNode.addParticleSystem(trailEmitter)
         
-        if color == UIColor.black {
+        if color == .black {
             geometryNode.name = "坏"
         } else {
             geometryNode.name = "好"
@@ -126,12 +125,24 @@ class GameViewController: UIViewController {
         
     }
     
+    func createExpode(_ geometry: SCNGeometry, _ position: SCNVector3, _ rotate: SCNVector4) {
+        let explode = SCNParticleSystem(named: "Explode.scnp", inDirectory: nil)!
+        explode.emitterShape = geometry
+        explode.birthLocation = .surface
+        let rotateMatrix = SCNMatrix4MakeRotation(rotate.w, rotate.x, rotate.y, rotate.z)
+        let transformMatrix = SCNMatrix4MakeTranslation(position.x, position.y, position.z)
+        let convertMatrix = SCNMatrix4Mult(rotateMatrix, transformMatrix)
+        scn.addParticleSystem(explode, transform: convertMatrix)
+    }
+    
     func tapHandle(_ node: SCNNode) {
         if node.name == "好" {
             game.score += 1
+            createExpode(node.geometry!, node.presentation.position, node.presentation.rotation)
             node.removeFromParentNode()
         } else if node.name == "坏" {
             game.lives -= 1
+            createExpode(node.geometry!, node.presentation.position, node.presentation.rotation)
             node.removeFromParentNode()
         }
     }

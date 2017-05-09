@@ -25,6 +25,8 @@
 		7D0A745D1EC0C0A100EE9092 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0A74561EC0C0A100EE9092 /* UIColor+Extensions.swift */; };
 		7D77D6871EC210B000A38202 /* Trail.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 7D77D6851EC210B000A38202 /* Trail.scnp */; };
 		7D77D6881EC210B000A38202 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D77D6861EC210B000A38202 /* spark.png */; };
+		7D77D68F1EC286DF00A38202 /* Explode.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 7D77D68D1EC286DF00A38202 /* Explode.scnp */; };
+		7D77D6901EC286DF00A38202 /* bokeh.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D77D68E1EC286DF00A38202 /* bokeh.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		7D0A74561EC0C0A100EE9092 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		7D77D6851EC210B000A38202 /* Trail.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Trail.scnp; sourceTree = "<group>"; };
 		7D77D6861EC210B000A38202 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		7D77D68D1EC286DF00A38202 /* Explode.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Explode.scnp; sourceTree = "<group>"; };
+		7D77D68E1EC286DF00A38202 /* bokeh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bokeh.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,8 @@
 			children = (
 				7D77D6851EC210B000A38202 /* Trail.scnp */,
 				7D77D6861EC210B000A38202 /* spark.png */,
+				7D77D68D1EC286DF00A38202 /* Explode.scnp */,
+				7D77D68E1EC286DF00A38202 /* bokeh.png */,
 			);
 			name = Particle;
 			sourceTree = "<group>";
@@ -289,6 +295,8 @@
 				7D0A74281EBEBAB200EE9092 /* LaunchScreen.storyboard in Resources */,
 				7D0A74251EBEBAB200EE9092 /* Assets.xcassets in Resources */,
 				7D0A74231EBEBAB200EE9092 /* Main.storyboard in Resources */,
+				7D77D6901EC286DF00A38202 /* bokeh.png in Resources */,
+				7D77D68F1EC286DF00A38202 /* Explode.scnp in Resources */,
 				7D0A744C1EC0A92200EE9092 /* GeometryFighter.scnassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
