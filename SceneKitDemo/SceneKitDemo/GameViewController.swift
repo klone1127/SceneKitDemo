@@ -16,6 +16,8 @@ class GameViewController: UIViewController {
     var scn : SCNScene!
     var cameraNode : SCNNode!
     
+    var remake : TimeInterval = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configScnView()
@@ -38,6 +40,7 @@ class GameViewController: UIViewController {
         scnView.allowsCameraControl = true
         scnView.autoenablesDefaultLighting = true
         scnView.delegate = self
+        scnView.isPlaying = true
     }
     
     func configScene() {
@@ -89,6 +92,16 @@ class GameViewController: UIViewController {
         
     }
     
+    func clearScene() {
+    
+        for node in scn.rootNode.childNodes {
+            if node.presentation.position.y < -2 {
+                node.removeFromParentNode()
+            }
+        }
+    
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
@@ -99,7 +112,12 @@ class GameViewController: UIViewController {
 extension GameViewController : SCNSceneRendererDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-         genGeometry()
+        if time > remake {
+            genGeometry()
+            
+            remake = time + TimeInterval(Float.random(min: 0.2, max: 1.5))
+        }
+        clearScene()
     }
 
 }
