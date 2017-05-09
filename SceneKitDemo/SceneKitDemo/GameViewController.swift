@@ -21,7 +21,6 @@ class GameViewController: UIViewController {
         configScnView()
         configScene()
         configCamera()
-        genGeometry()
     }
     
     override var shouldAutorotate: Bool {
@@ -38,6 +37,7 @@ class GameViewController: UIViewController {
         scnView.showsStatistics = true
         scnView.allowsCameraControl = true
         scnView.autoenablesDefaultLighting = true
+        scnView.delegate = self
     }
     
     func configScene() {
@@ -95,3 +95,12 @@ class GameViewController: UIViewController {
     }
 
 }
+
+extension GameViewController : SCNSceneRendererDelegate {
+    
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+         genGeometry()
+    }
+
+}
+
